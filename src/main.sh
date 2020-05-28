@@ -178,17 +178,33 @@ function main {
       installTerragrunt
       terragruntValidate ${*}
       ;;
+    validate-all)
+      installTerragrunt
+      terragruntValidateAll ${*}
+      ;;
     plan)
       installTerragrunt
       terragruntPlan ${*}
+      ;;
+    plan-all)
+      installTerragrunt
+      terragruntPlanAll ${*}
       ;;
     apply)
       installTerragrunt
       terragruntApply ${*}
       ;;
+    apply-all)
+      installTerragrunt
+      terragruntApplyAll ${*}
+      ;;
     output)
       installTerragrunt
       terragruntOutput ${*}
+      ;;
+    output-all)
+      installTerragrunt
+      terragruntOutputAll ${*}
       ;;
     import)
       installTerragrunt
@@ -201,6 +217,10 @@ function main {
     destroy)
       installTerragrunt
       terragruntDestroy ${*}
+      ;;
+    destroy-all)
+      installTerragrunt
+      terragruntDestroyAll ${*}
       ;;
     *)
       echo "Error: Must provide a valid value for terragrunt_subcommand"

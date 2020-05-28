@@ -3,7 +3,7 @@
 function terragruntPlan {
   # Gather the output of `terragrunt plan`.
   echo "plan: info: planning Terragrunt configuration in ${tfWorkingDir}"
-  planOutput=$(${tfBinary} plan -detailed-exitcode -input=false ${*} 2>&1)
+  planOutput=$(${tfBinary} plan${all_extention} -detailed-exitcode -input=false ${*} 2>&1)
   planExitCode=${?}
   planHasChanges=false
   planCommentStatus="Failed"
@@ -72,4 +72,9 @@ ${planOutput}
 
   echo "::set-output name=tf_actions_plan_output::${planOutput}"
   exit ${planExitCode}
+}
+
+function terragruntPlanAll {
+  all_extention="-all"
+  terragruntPlan ${*}
 }
