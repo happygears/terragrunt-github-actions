@@ -1,6 +1,6 @@
 FROM alpine:3 
 
-ENV VERSION 1.15.4
+ENV VERSION 1.17.2
 
 ADD https://releases.hashicorp.com/vault/${VERSION}/vault_${VERSION}_linux_amd64.zip /tmp/
 
