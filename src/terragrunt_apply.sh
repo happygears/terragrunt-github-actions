@@ -48,6 +48,6 @@ ${applyOutput}
 
 function terragruntApplyAll {
   all_extention="-all"
-  non_interactive="--terragrunt-non-interactive"
+  non_interactive="--non-interactive"
   terragruntApply ${*}
 }
